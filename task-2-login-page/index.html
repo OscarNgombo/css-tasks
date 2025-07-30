@@ -1,9 +1,40 @@
 <html lang="en">
-<head >
+  <head>
     <title>Task 2 Log In Page</title>
-    <link href="index.css" rel="stylesheet">
-</head>
-<body>
-    <h1>Task 2 Log In Page</h1>
-</body>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+        <footer>© All Rights Reserved</footer>
+      </div>
+      <div class="right-panel"></div>
+    </div>
+    <div class="login-box">
+      <div class="login-header">
+        <div class="header-left">
+          <span class="login-icon"
+            ><img src="images/profile.png" alt="user"
+          /></span>
+        </div>
+        <div class="header-right">
+          <span class="login-title">User Login</span>
+        </div>
+      </div>
+      <p>Enter your username and password</p>
+      <form>
+        <label>Username</label><br />
+        <input type="text" name="username" /><br />
+
+        <label>Password</label><br />
+        <div class="password-field">
+          <input type="password" name="password" id="password" />
+          <span class="toggle" onclick="togglePassword()">👁️</span>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

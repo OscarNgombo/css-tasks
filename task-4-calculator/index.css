@@ -1,3 +1,199 @@
-h1 {
-    color: orange;
+/* THEME 1: Dark Blue (Default) */
+body[data-theme="1"] {
+  --main-bg: #3a4663;
+  --keypad-screen-bg: #181f33;
+  --screen-text: #ffffff;
+  --screen-text-secondary: rgba(255, 255, 255, 0.75);
+  --key-main-bg: #eae3dc;
+  --key-main-shadow: #b3a49a;
+  --key-main-text: #434a59;
+  --key-func-bg: #647198;
+  --key-func-shadow: #414e73;
+  --key-equal-bg: #d03f2f;
+  --key-equal-shadow: #93261a;
+  --key-func-equal-text: #ffffff;
+  --toggle-bg: #242d44;
+}
+
+/* THEME 2: Light Gray */
+body[data-theme="2"] {
+  --main-bg: #e6e6e6;
+  --keypad-screen-bg: #eeeeee;
+  --screen-text: #36362c;
+  --screen-text-secondary: rgba(54, 54, 44, 0.75);
+  --key-main-bg: #e5e4e1;
+  --key-main-shadow: #a79e91;
+  --key-main-text: #36362c;
+  --key-func-bg: #378187;
+  --key-func-shadow: #1b6066;
+  --key-equal-bg: #c85402;
+  --key-equal-shadow: #873901;
+  --key-func-equal-text: #ffffff;
+  --toggle-bg: #d2cdcd;
+}
+
+/* THEME 3: Dark Purple */
+body[data-theme="3"] {
+  --main-bg: #17062a;
+  --keypad-screen-bg: #1e0936;
+  --screen-text: #ffe53d;
+  --screen-text-secondary: rgba(255, 229, 61, 0.75);
+  --key-main-bg: #331c4d;
+  --key-main-shadow: #851c9c;
+  --key-main-text: #ffe53d;
+  --key-func-bg: #56077c;
+  --key-func-shadow: #be15f4;
+  --key-equal-bg: #00decf;
+  --key-equal-shadow: #6cf9f1;
+  --key-func-equal-text: #000000;
+  --toggle-bg: #1e0936;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  background-color: var(--main-bg);
+  color: var(--screen-text);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.calculator {
+  width: 100%;
+  max-width: 540px;
+}
+.calculator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+.calculator__header h1 {
+  font-size: 2rem;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+.theme-switcher label {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+}
+.theme-switcher__control {
+  position: relative;
+}
+.theme-switcher__labels {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 8px;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--toggle-bg);
+  border-radius: 13px;
+  height: 26px;
+  width: 70px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  background-color: var(--key-equal-bg);
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  background-color: var(--key-equal-bg);
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.calculator__screen {
+  background-color: var(--keypad-screen-bg);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 130px;
+}
+
+#operation-display {
+  font-size: 1.5rem;
+  color: var(--screen-text-secondary);
+  margin-bottom: 0.25rem;
+  height: 30px;
+}
+
+#display {
+  font-size: 3.5rem;
+}
+
+.calculator__keypad {
+  background-color: var(--keypad-screen-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.8rem, 3vw, 1.5rem);
+  transition: background-color 0.3s;
+}
+.key {
+  font-family: inherit;
+  font-weight: inherit;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding-top: 0.75rem;
+  font-size: 2rem;
+  transition: filter 0.15s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  min-height: 64px;
+}
+.key:hover {
+  filter: brightness(1.2);
+}
+.key--large {
+  grid-column: span 2;
+  font-size: 1.5rem;
+}
+.key {
+  background-color: var(--key-main-bg);
+  color: var(--key-main-text);
+  box-shadow: 0 4px 0 0 var(--key-main-shadow);
+}
+.key--func {
+  background-color: var(--key-func-bg);
+  color: var(--key-func-equal-text);
+  box-shadow: 0 4px 0 0 var(--key-func-shadow);
+  font-size: 1.5rem;
+}
+.key--equal {
+  background-color: var(--key-equal-bg);
+  color: var(--key-func-equal-text);
+  box-shadow: 0 4px 0 0 var(--key-equal-shadow);
 }

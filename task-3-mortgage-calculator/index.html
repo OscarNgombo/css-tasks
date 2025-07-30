@@ -1,9 +1,104 @@
+<!DOCTYPE html>
 <html lang="en">
-<head >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 3 Mortgage Calculator</title>
-    <link href="index.css" rel="stylesheet">
-</head>
-<body>
-    <h1>Task 3 Mortgage Calculator</h1>
-</body>
+    <link href="index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="calculator-container">
+      <section class="form-section">
+        <form id="mortgage-form">
+          <header class="header">
+            <h1>Mortgage Calculator</h1>
+            <a href="#" id="clear-all">Clear All</a>
+          </header>
+
+          <div class="form-group">
+            <label for="mortgage-amount">Mortgage Amount</label>
+            <div class="input-wrapper currency">
+              <input
+                type="text"
+                id="mortgage-amount"
+                placeholder="e.g. 300,000"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="mortgage-term">Mortgage Term</label>
+              <div class="input-wrapper years">
+                <input type="text" id="mortgage-term" placeholder="e.g. 25" />
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="interest-rate">Interest Rate</label>
+              <div class="input-wrapper percentage">
+                <input type="text" id="interest-rate" placeholder="e.g. 5.25" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Mortgage Type</label>
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="repayment"
+                name="mortgage-type"
+                value="repayment"
+                checked
+              />
+              <label for="repayment" class="radio-label">
+                <span class="custom-radio"></span> Repayment
+              </label>
+            </div>
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="interest-only"
+                name="mortgage-type"
+                value="interest-only"
+              />
+              <label for="interest-only" class="radio-label">
+                <span class="custom-radio"></span> Interest Only
+              </label>
+            </div>
+          </div>
+
+          <button type="button" id="calculate-btn">
+            <img
+              src="images/image.png"
+              alt="Calculator Icon"
+              class="btn-icon"
+            />
+            Calculate Repayments
+          </button>
+        </form>
+      </section>
+      <aside class="results-section">
+        <div class="results-content initial">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/005/428/911/non_2x/initial-mortgage-payment-mortgage-loan-low-interest-rate-vector.jpg"
+            alt="Illustration of calculation results"
+            class="results-illustration"
+          />
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click "calculate repayments" to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+      </aside>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
