@@ -1,3 +1,207 @@
-h1 {
-    color: orange;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  /* Backgrounds */
+  --bg-light-red: hsl(0, 100%, 98%);
+  --bg-orangey-yellow: hsl(39, 100%, 98%);
+  --bg-green-teal: hsl(166, 100%, 98%);
+  --bg-cobalt-blue: hsl(234, 100%, 98%);
+
+  /* Gradients */
+  --grad-slate-blue: hsl(252, 100%, 63%);
+  --grad-royal-blue: hsl(241, 81%, 54%);
+  --grad-violet-blue: hsl(256, 72%, 46%);
+  --grad-persian-blue: hsl(241, 72%, 46%);
+}
+
+body {
+  background-color: hsl(220, 100%, 97%);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  width: 100%;
+  height: fit-content;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: table;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.result {
+  background: linear-gradient(var(--grad-slate-blue), var(--grad-royal-blue));
+  color: white;
+  width: 50%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.result h2 {
+  font-size: 1.2rem;
+  color: hsl(241, 100%, 89%);
+  margin-bottom: 20px;
+}
+
+.score-circle {
+  background: radial-gradient(
+    ellipse at top center,
+    hsl(256, 72%, 46%) 0%,
+    hsla(256, 72%, 46%, 0.6) 50%,
+    hsla(241, 72%, 46%, 0.2) 80%,
+    hsla(241, 72%, 46%, 0) 100%
+  );
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.score-circle p.score {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+}
+
+.out-of {
+  font-size: 0.9rem;
+  color: hsl(241, 100%, 80%);
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: hsl(241, 100%, 80%);
+  padding: 0 10px;
+}
+
+.summary {
+  background-color: white;
+  width: 50%;
+  height: fit-content;
+  display: table-cell;
+  vertical-align: top;
+  text-align: left;
+  padding: 20px;
+}
+
+.summary h3 {
+  color: hsl(224, 30%, 27%);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.summary-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.item {
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.item > span:last-of-type {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  color: inherit;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji",
+    sans-serif;
+}
+span strong {
+  color: hsl(224, 30%, 27%);
+}
+.label {
+  margin-left: 5px;
+  width: 80px;
+  display: inline-block;
+}
+.gray {
+  color: hsl(240, 10%, 70%);
+  font-weight: normal;
+}
+
+.item.reaction {
+  background-color: var(--bg-light-red);
+  color: var(--light-red);
+}
+.icon-bolt {
+  color: green; /* You can use any color name, hex code, or RGB value */
+}
+.item.memory {
+  background-color: var(--bg-orangey-yellow);
+  color: var(--orangey-yellow);
+}
+
+.item.verbal {
+  background-color: var(--bg-green-teal);
+  color: var(--green-teal);
+}
+
+.item.visual {
+  background-color: var(--bg-cobalt-blue);
+  color: var(--cobalt-blue);
+}
+
+.continue {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(var(--grad-slate-blue), var(--grad-royal-blue));
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.continue:hover {
+  background: linear-gradient(hsl(252, 100%, 70%), hsl(241, 81%, 65%));
 }

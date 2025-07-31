@@ -1,9 +1,73 @@
+<!DOCTYPE html>
 <html lang="en">
-<head >
-    <title>Task 4 Calculator</title>
-    <link href="index.css" rel="stylesheet">
-</head>
-<body>
-    <h1>Task 4 Calculator</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator with Themes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-theme="1">
+    <main class="calculator">
+      <header class="calculator__header">
+        <h1>calc</h1>
+        <div class="theme-switcher">
+          <label for="theme-toggle">THEME</label>
+          <div class="theme-switcher__control">
+            <div class="theme-switcher__labels">
+              <span>1</span><span>2</span><span>3</span>
+            </div>
+            <input
+              type="range"
+              min="1"
+              max="3"
+              value="1"
+              id="theme-toggle"
+              aria-label="Theme switcher"
+            />
+          </div>
+        </div>
+      </header>
+
+      <div class="calculator__screen">
+        <div id="operation-display"></div>
+        <div id="display">0</div>
+      </div>
+
+      <div class="calculator__keypad">
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <button class="key key--func" data-action="delete">DEL</button>
+
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key" data-action="add">+</button>
+
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key" data-action="subtract">-</button>
+
+        <button class="key" data-action="decimal">.</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key" data-action="divide">/</button>
+        <button class="key" data-action="multiply">x</button>
+
+        <button class="key key--large key--func" data-action="reset">
+          RESET
+        </button>
+        <button class="key key--large key--equal" data-action="calculate">
+          =
+        </button>
+      </div>
+    </main>
+  </body>
 </html>

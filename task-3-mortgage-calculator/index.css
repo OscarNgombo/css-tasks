@@ -1,3 +1,315 @@
-h1 {
-    color: orange;
+:root {
+  --dark-blue: #133041;
+  --lime-green: #dde64b;
+  --lime-green-hover: #e7f065;
+  --light-grey: #f7f9fb;
+  --light-lime-bg: hsl(66, 73%, 95%);
+  --medium-grey: #80939f;
+  --dark-grey: #31444f;
+  --border-color: #d9e2e7;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.calculator-container {
+  width: 920px;
+  max-width: 100%;
+  background-color: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.calculator-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form-section {
+  width: 55%;
+  float: left;
+  padding: 40px;
+}
+
+.results-section {
+  width: 45%;
+  float: left;
+  background-color: var(--dark-blue);
+  min-height: 600px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 40px;
+  position: relative;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header h1 {
+  font-size: 24px;
+  float: left;
+  color: var(--dark-grey);
+  font-weight: 700;
+}
+
+.header #clear-all {
+  float: right;
+  text-decoration: underline;
+  color: var(--medium-grey);
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+.header #clear-all:hover {
+  color: var(--dark-grey);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--medium-grey);
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-grey);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--lime-green);
+  box-shadow: 0 0 0 1px var(--lime-green);
+}
+
+.input-wrapper::before,
+.input-wrapper::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--light-grey);
+  padding: 14px 16px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--medium-grey);
+  border: 1px solid var(--border-color);
+}
+
+.input-wrapper.currency::before {
+  content: "£";
+  left: 1px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+}
+.input-wrapper.currency input {
+  padding-left: 58px;
+}
+
+.input-wrapper.years::after {
+  content: "years";
+  right: 1px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-left: none;
+}
+.input-wrapper.years input {
+  padding-right: 80px;
+}
+
+.input-wrapper.percentage::after {
+  content: "%";
+  right: 1px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-left: none;
+}
+.input-wrapper.percentage input {
+  padding-right: 50px;
+}
+
+.form-row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.form-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.form-group.half-width {
+  width: 50%;
+  float: left;
+  padding: 0 10px;
+}
+
+.radio-option {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.radio-option:hover {
+  border-color: var(--lime-green);
+}
+
+.radio-option input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-label {
+  display: block;
+  font-weight: 700;
+  color: var(--dark-grey);
+}
+
+.custom-radio {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  margin-right: 16px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label .custom-radio::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--lime-green);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+  border-color: var(--lime-green);
+  background-color: var(--light-lime-bg);
+}
+
+#calculate-btn {
+  background-color: var(--lime-green);
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 30px;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.2s;
+}
+#calculate-btn:hover {
+  background-color: var(--lime-green-hover);
+}
+.btn-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.results-content {
+  color: var(--white);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+}
+
+.results-illustration {
+  max-width: 192px;
+  margin-bottom: 24px;
+}
+
+.results-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.results-content p {
+  color: var(--medium-grey);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .form-section,
+  .results-section {
+    width: 100%;
+    float: none;
+  }
+  .results-section {
+    border-radius: 0 40px 20px 20px;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-section {
+    padding: 24px;
+  }
+  .form-group.half-width {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .form-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
