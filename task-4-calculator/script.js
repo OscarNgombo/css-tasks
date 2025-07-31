@@ -163,5 +163,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("calculatorTheme") || "1";
   setTheme(savedTheme);
 
+  // Layout Switcher Logic
+  const layoutSwitcherBtn = document.getElementById("layout-switcher-btn");
+  const calculator = document.querySelector(".calculator");
+
+  function setLayout(layout) {
+    const isFlex = layout === 'flex';
+    calculator.classList.toggle('flex-layout', isFlex);
+    document.body.classList.toggle('using-flex-layout', isFlex);
+    layoutSwitcherBtn.title = isFlex ? 'Switch to Grid Layout' : 'Switch to Flexbox Layout';
+    localStorage.setItem("calculatorLayout", layout);
+  }
+
+  layoutSwitcherBtn.addEventListener("click", () => {
+    const currentLayout = document.body.classList.contains('using-flex-layout') ? 'flex' : 'grid';
+    const newLayout = currentLayout === 'grid' ? 'flex' : 'grid';
+    setLayout(newLayout);
+  });
+
+  // Initialize layout on page load
+  const savedLayout = localStorage.getItem("calculatorLayout") || "grid";
+  setLayout(savedLayout);
+
   updateDisplay();
 });

@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   /* Primary */
   --light-red: hsl(0, 100%, 67%);
@@ -22,6 +16,11 @@
   --grad-royal-blue: hsl(241, 81%, 54%);
   --grad-violet-blue: hsl(256, 72%, 46%);
   --grad-persian-blue: hsl(241, 72%, 46%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -171,23 +170,24 @@ span strong {
 .item.reaction {
   background-color: var(--bg-light-red);
   color: var(--light-red);
-}
-.icon-bolt {
-  color: green; /* You can use any color name, hex code, or RGB value */
+  fill: var(--light-red);
 }
 .item.memory {
   background-color: var(--bg-orangey-yellow);
   color: var(--orangey-yellow);
+  fill: var(--orangey-yellow);
 }
 
 .item.verbal {
   background-color: var(--bg-green-teal);
   color: var(--green-teal);
+  fill: var(--green-teal);
 }
 
 .item.visual {
   background-color: var(--bg-cobalt-blue);
   color: var(--cobalt-blue);
+  fill: var(--cobalt-blue);
 }
 
 .continue {

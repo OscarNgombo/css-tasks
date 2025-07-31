@@ -197,3 +197,62 @@ input[type="range"]::-moz-range-thumb {
   color: var(--key-func-equal-text);
   box-shadow: 0 4px 0 0 var(--key-equal-shadow);
 }
+
+.layout-switcher-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+#layout-switcher-btn {
+  background-color: var(--key-func-bg);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 0 0 var(--key-func-shadow);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#layout-switcher-btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+#layout-switcher-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--key-func-equal-text);
+  transition: stroke 0.3s;
+}
+
+#flex-icon {
+  display: none;
+}
+
+body.using-flex-layout #grid-icon {
+  display: none;
+}
+body.using-flex-layout #flex-icon {
+  display: block;
+}
+
+.calculator.flex-layout .calculator__keypad {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calculator.flex-layout .key {
+  width: calc(25% - 1.125rem);
+  flex-grow: 1;
+}
+
+.calculator.flex-layout .key--large {
+  grid-column: auto;
+  width: calc(50% - 0.75rem);
+}

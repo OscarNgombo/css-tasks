@@ -13,8 +13,16 @@
     />
   </head>
   <body>
-    <main class="calculator-container">
+    <main>
+      <button id="open-modal-btn" class="open-modal-button">
+        Open Mortgage Calculator
+      </button>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay">
+      <div class="calculator-container">
       <section class="form-section">
+        <button id="close-modal-btn" class="close-modal-btn">&times;</button>
         <form id="mortgage-form">
           <header class="header">
             <h1>Mortgage Calculator</h1>
@@ -24,11 +32,7 @@
           <div class="form-group">
             <label for="mortgage-amount">Mortgage Amount</label>
             <div class="input-wrapper currency">
-              <input
-                type="text"
-                id="mortgage-amount"
-                placeholder="e.g. 300,000"
-              />
+              <input type="text" id="mortgage-amount" />
             </div>
           </div>
 
@@ -36,13 +40,13 @@
             <div class="form-group half-width">
               <label for="mortgage-term">Mortgage Term</label>
               <div class="input-wrapper years">
-                <input type="text" id="mortgage-term" placeholder="e.g. 25" />
+                <input type="text" id="mortgage-term" />
               </div>
             </div>
             <div class="form-group half-width">
               <label for="interest-rate">Interest Rate</label>
               <div class="input-wrapper percentage">
-                <input type="text" id="interest-rate" placeholder="e.g. 5.25" />
+                <input type="text" id="interest-rate" />
               </div>
             </div>
           </div>
@@ -84,10 +88,10 @@
           </button>
         </form>
       </section>
-      <aside class="results-section">
+      <div class="results-section">
         <div class="results-content initial">
           <img
-            src="https://static.vecteezy.com/system/resources/previews/005/428/911/non_2x/initial-mortgage-payment-mortgage-loan-low-interest-rate-vector.jpg"
+            src="images/bg-image.png"
             alt="Illustration of calculation results"
             class="results-illustration"
           />
@@ -97,8 +101,9 @@
             monthly repayments would be.
           </p>
         </div>
-      </aside>
-    </main>
+      </div>
+    </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

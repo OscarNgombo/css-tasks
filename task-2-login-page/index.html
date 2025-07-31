@@ -7,7 +7,9 @@
     <div class="container">
       <div class="left-panel">
         <img src="images/logo.png" alt="Logo" class="logo" />
-        <footer>© All Rights Reserved</footer>
+        <div class="footer">
+          <footer>© All Rights Reserved</footer>
+        </div>
       </div>
       <div class="right-panel"></div>
     </div>
@@ -24,14 +26,22 @@
       </div>
       <p>Enter your username and password</p>
       <form>
-        <label>Username</label><br />
-        <input type="text" name="username" /><br />
-
-        <label>Password</label><br />
-        <div class="password-field">
-          <input type="password" name="password" id="password" />
-          <span class="toggle" onclick="togglePassword()">👁️</span>
+        <div class="row">
+          <div class="col-25">
+            <label>Username</label>
+          </div>
+          <div class="col-75"><input type="text" name="username" /></div>
         </div>
+        <div class="row">
+          <div class="col-25"><label>Password</label><br /></div>
+          <div class="col-75">
+            <div class="password-field">
+              <input type="password" name="password" id="password" />
+              <span class="toggle" onclick="togglePassword()">👁️</span>
+            </div>
+          </div>
+        </div>
+
         <button type="submit">Sign In</button>
       </form>
     </div>

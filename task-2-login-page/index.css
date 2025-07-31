@@ -5,9 +5,6 @@
   box-sizing: border-box;
 }
 
-h1 {
-  color: orange;
-}
 body,
 html {
   height: 100%;
@@ -28,25 +25,28 @@ html {
 }
 
 .left-panel {
-  width: 35%;
-  background: white;
+  display: grid;
+  margin-inline-start: 0;
+  width: inherit;
+  background: #f8f8f8;
   padding: 40px 20px;
   position: relative;
 }
-
 .logo {
+  margin-inline: 20px;
   margin-top: 20px;
   width: 120px;
 }
-
 footer {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: #003366;
+  bottom: 0;
+  left: 0;
+  color: #5b7382;
   font-size: 0.85rem;
+  background-color: #fff;
+  padding: 20px;
+  right: 0px;
 }
-
 .right-panel {
   width: 65%;
   background-image: url("https://i.natgeofe.com/n/72d25b07-5849-4d2a-9249-a48c5ed831c3/zebras-kilimanjaro-africa.jpg");
@@ -67,7 +67,7 @@ footer {
   overflow: hidden;
 }
 .login-header {
-  background-color: green;
+  background-color: #15b92f;
   color: white;
   padding: 0;
   height: 3rem;
@@ -76,19 +76,19 @@ footer {
 
 .header-left {
   display: inline-block;
-  background-color: black;
-  color: white;
-  padding: 20px;
-  vertical-align: top;
-  height: inherit;
+  background-color: #0f1937;
+  height: 3rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
 }
 .header-right {
-  display: inline-block;
-  background-color: green;
-  color: white;
-  padding: 20px;
-  height: inherit;
   vertical-align: top;
+  display: inline-block;
+  color: white;
+  align-content: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  padding-bottom: 0px;
 }
 .login-title {
   font-weight: bold;
@@ -101,12 +101,26 @@ footer {
 }
 
 .login-box p {
-  padding: 15px 20px 0;
+  padding-top: 0px;
+  padding: 15px 20px;
   font-size: 0.95rem;
 }
 
 form {
-  padding: 10px 20px 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.col-25 {
+  width: 25%;
+  float: left;
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+.col-75 {
+  width: 75%;
+  float: left;
+  margin-top: 6px;
 }
 
 label {
@@ -125,7 +139,11 @@ input[type="password"] {
   background-color: #fffbe6;
   border-radius: 3px;
 }
-
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 input:focus {
   outline: 1px solid #00a651;
 }
@@ -140,6 +158,7 @@ input:focus {
   top: 9px;
   cursor: pointer;
   font-size: 0.9rem;
+  overflow: visible;
 }
 
 button {
