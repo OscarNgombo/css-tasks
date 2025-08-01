@@ -1,3 +1,62 @@
-h1 {
-    color: orange;
+:root {
+  --background-color: #092566;
+  --primary-color: #45649a;
+  --secondary-color: #45649a;
+  --default-text-color: #fff;
+  --alternate-text-color: #434343;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: sans-serif;
+  color: var(--default-text-color);
+  background-color: var(--background-color);
+}
+main {
+  border-radius: 5px;
+  padding-inline-start: 1rem;
+  margin: 1rem;
+  background-color: var(--primary-color);
+}
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1.5rem;
+  height: fit-content;
+  justify-content: space-between;
+}
+.contact-info h1 {
+  padding-block: 2rem;
+  text-align: justify;
+  text-wrap: none;
+}
+.contact-info span {
+  justify-content: left;
+}
+.contact-details {
+  padding-block: 2.5rem;
+  margin-top: auto;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 5px 5px 0;
+  padding: 1.5rem;
+  background-color: #f3f3f2;
+  flex: 2;
+  color: var(--alternate-text-color);
 }

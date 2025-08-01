@@ -108,6 +108,7 @@ input[type="range"] {
   border-radius: 13px;
   height: 26px;
   width: 70px;
+  padding-inline: 10px;
   cursor: pointer;
 }
 input[type="range"]::-webkit-slider-thumb {

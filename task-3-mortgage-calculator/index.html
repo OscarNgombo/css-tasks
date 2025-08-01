@@ -21,88 +21,89 @@
 
     <div id="modal-overlay" class="modal-overlay">
       <div class="calculator-container">
-      <section class="form-section">
-        <button id="close-modal-btn" class="close-modal-btn">&times;</button>
-        <form id="mortgage-form">
-          <header class="header">
-            <h1>Mortgage Calculator</h1>
-            <a href="#" id="clear-all">Clear All</a>
-          </header>
+        <section class="form-section">
+          <form id="mortgage-form">
+            <header class="header">
+              <h1>Mortgage Calculator</h1>
+              <a href="#" id="clear-all">Clear All</a>
+            </header>
 
-          <div class="form-group">
-            <label for="mortgage-amount">Mortgage Amount</label>
-            <div class="input-wrapper currency">
-              <input type="text" id="mortgage-amount" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group half-width">
-              <label for="mortgage-term">Mortgage Term</label>
-              <div class="input-wrapper years">
-                <input type="text" id="mortgage-term" />
+            <div class="form-group">
+              <label for="mortgage-amount">Mortgage Amount</label>
+              <div class="input-wrapper currency">
+                <input type="text" id="mortgage-amount" />
               </div>
             </div>
-            <div class="form-group half-width">
-              <label for="interest-rate">Interest Rate</label>
-              <div class="input-wrapper percentage">
-                <input type="text" id="interest-rate" />
+
+            <div class="form-row">
+              <div class="form-group half-width">
+                <label for="mortgage-term">Mortgage Term</label>
+                <div class="input-wrapper years">
+                  <input type="text" id="mortgage-term" />
+                </div>
+              </div>
+              <div class="form-group half-width">
+                <label for="interest-rate">Interest Rate</label>
+                <div class="input-wrapper percentage">
+                  <input type="text" id="interest-rate" />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label>Mortgage Type</label>
-            <div class="radio-option">
-              <input
-                type="radio"
-                id="repayment"
-                name="mortgage-type"
-                value="repayment"
-                checked
-              />
-              <label for="repayment" class="radio-label">
-                <span class="custom-radio"></span> Repayment
-              </label>
+            <div class="form-group">
+              <label>Mortgage Type</label>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="repayment"
+                  name="mortgage-type"
+                  value="repayment"
+                  checked
+                />
+                <label for="repayment" class="radio-label">
+                  <span class="custom-radio"></span> Repayment
+                </label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="interest-only"
+                  name="mortgage-type"
+                  value="interest-only"
+                />
+                <label for="interest-only" class="radio-label">
+                  <span class="custom-radio"></span> Interest Only
+                </label>
+              </div>
             </div>
-            <div class="radio-option">
-              <input
-                type="radio"
-                id="interest-only"
-                name="mortgage-type"
-                value="interest-only"
-              />
-              <label for="interest-only" class="radio-label">
-                <span class="custom-radio"></span> Interest Only
-              </label>
-            </div>
-          </div>
 
-          <button type="button" id="calculate-btn">
+            <button type="button" id="calculate-btn">
+              <img
+                src="images/image.png"
+                alt="Calculator Icon"
+                class="btn-icon"
+              />
+              Calculate Repayments
+            </button>
+          </form>
+          <div class="bootom-line"></div>
+        </section>
+        <div class="results-section">
+          <button id="close-modal-btn" class="close-modal-btn">×</button>
+          <div class="results-content initial">
             <img
-              src="images/image.png"
-              alt="Calculator Icon"
-              class="btn-icon"
+              src="images/bg-image.png"
+              alt="Illustration of calculation results"
+              class="results-illustration"
             />
-            Calculate Repayments
-          </button>
-        </form>
-      </section>
-      <div class="results-section">
-        <div class="results-content initial">
-          <img
-            src="images/bg-image.png"
-            alt="Illustration of calculation results"
-            class="results-illustration"
-          />
-          <h2>Results shown here</h2>
-          <p>
-            Complete the form and click "calculate repayments" to see what your
-            monthly repayments would be.
-          </p>
+            <h2>Results shown here</h2>
+            <p>
+              Complete the form and click "calculate repayments" to see what
+              your monthly repayments would be.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <script src="script.js"></script>
   </body>

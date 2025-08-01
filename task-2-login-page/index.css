@@ -1,3 +1,8 @@
+@font-face {
+  font-family: primaryFont;
+  src: url(fonts/LexendDeca.ttf);
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -7,8 +12,8 @@
 
 body,
 html {
+  font-family: primaryFont;
   height: 100%;
-  font-family: "Segoe UI", sans-serif;
 }
 
 .container {
@@ -68,27 +73,20 @@ footer {
 }
 .login-header {
   background-color: #15b92f;
-  color: white;
-  padding: 0;
-  height: 3rem;
-  text-align: start;
+  position: relative;
+  font-weight: 500;
 }
 
 .header-left {
   display: inline-block;
   background-color: #0f1937;
-  height: 3rem;
-  padding-block: 1rem;
-  padding-inline: 1rem;
+  padding: 0.5rem;
 }
 .header-right {
-  vertical-align: top;
   display: inline-block;
-  color: white;
-  align-content: center;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  padding-bottom: 0px;
+  padding-top: 0.8rem;
+  padding-left: 1rem;
+  position: absolute;
 }
 .login-title {
   font-weight: bold;
@@ -101,15 +99,17 @@ footer {
 }
 
 .login-box p {
-  padding-top: 0px;
-  padding: 15px 20px;
-  font-size: 0.95rem;
+  font-weight: 300;
+  padding-bottom: 0px;
+  padding: 2rem;
+  font-size: 0.8rem;
 }
 
 form {
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  padding: 2rem;
+  padding-top: 0px;
+  font-size: 0.95rem;
+  font-weight: 300;
 }
 .col-25 {
   width: 25%;
@@ -154,13 +154,17 @@ input:focus {
 
 .password-field .toggle {
   position: absolute;
+  top: 50%;
   right: 10px;
-  top: 9px;
+  transform: translateY(-50%);
   cursor: pointer;
-  font-size: 0.9rem;
-  overflow: visible;
 }
-
+.password-field .toggle svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: #5b7382;
+}
 button {
   float: right;
   margin-block: 20px;
@@ -175,4 +179,9 @@ button {
 
 button:hover {
   background-color: #2a3559;
+}
+.bottom-line {
+  margin-top: 3rem;
+  padding: 1.3rem;
+  background-color: #fafafe;
 }
