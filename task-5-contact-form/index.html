@@ -7,30 +7,29 @@
     <main>
       <div class="contact-container">
         <div class="contact-info">
-          <h1>Contact Us</h1>
-          <br />
-          <span
-            >We can't wait to hear from you. Feel free to get in touch with
-            us.</span
-          >
+          <h1>Contact us</h1>
+          <p>We can't wait to hear from you. Feel free to get in touch with us.</p>
           <div class="contact-details">
-            <span>Happy ST</span>
-            <br />
-            <span>000-111-222</span>
+            <p>Happy ST</p>
+            <p>000-111-222</p>
           </div>
         </div>
         <div class="contact-form">
           <form>
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" />
-            <label for="email">Email</label>
-            <input type="email" id="email" />
-            <span>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" placeholder="" />
+            </div>
+            <div class="form-group full-width">
               <label for="message">Message</label>
-              <input type="text" id="message" />
-            </span>
-            <div>
-              <button>Send message</button>
+              <textarea id="message" rows="6" placeholder=""></textarea>
+            </div>
+            <div class="form-group full-width">
+              <button type="submit">Send message</button>
             </div>
           </form>
         </div>

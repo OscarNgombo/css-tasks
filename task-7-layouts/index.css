@@ -1,3 +1,7 @@
 h1 {
-    color: orange;
+  color: orange;
+}
+a {
+  display: block;
+  padding: 1rem;
 }

@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+}
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "img_1 img_2 img_2 img_2 img_3"
+    "img_4 img_2 img_2 img_2 img_5"
+    "img_6 img_2 img_2 img_2 img_7"
+    "img_8 img_9 img_10 img_11 img_12";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.15rem;
+  padding: 1rem;
+}
+
+.grid-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0.25rem 0.5rem rgba(229, 226, 226, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.img_1 {
+  grid-area: img_1;
+  background-image: url("../images/Sunset view ❤️.jpeg");
+}
+.img_2 {
+  grid-area: img_2;
+  background-image: url("../images/newCo.jpg");
+}
+.img_3 {
+  grid-area: img_3;
+  background-image: url("../images/606dbd20-bb8d-4c67-9268-4fe7ff9e0c58.jpeg");
+}
+.img_4 {
+  grid-area: img_4;
+  background-image: url("../images/a0dc9461-0b23-4b63-af64-607896083c89.jpeg");
+}
+.img_5 {
+  grid-area: img_5;
+  background-image: url("../images/785d7411-d7b1-4933-b00b-74df4720b1d3.jpeg");
+}
+.img_6 {
+  grid-area: img_6;
+  background-image: url("../images/high-resolution-beach-pier-photo-m.jpg");
+}
+.img_7 {
+  grid-area: img_7;
+  background-image: url("../images/thailand in january.jpeg");
+}
+.img_8 {
+  grid-area: img_8;
+  background-image: url("../images/long.jpeg");
+}
+.img_9 {
+  grid-area: img_9;
+  background-image: url("../images/thailand in january.jpeg");
+}
+.img_10 {
+  grid-area: img_10;
+  background-image: url("../images/Beachin it.jpeg");
+}
+.img_11 {
+  grid-area: img_11;
+  background-image: url("../images/Sunset view ❤️.jpeg");
+}
+.img_12 {
+  grid-area: img_12;
+  background-image: url("../images/6bcb1c4e-ba41-4b9f-ba80-1660e5f8504c.jpeg");
+}
