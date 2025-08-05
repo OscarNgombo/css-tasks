@@ -1,9 +1,438 @@
+<!DOCTYPE html>
 <html lang="en">
-<head >
-    <title>Task Heading</title>
-    <link href="index.css" rel="stylesheet">
-</head>
-<body>
-    <h1>Task Heading</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 10: Chat Interface</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="chat-container">
+      <header class="app-header">
+        <div class="logo">
+          <h2>JoiN</h2>
+        </div>
+        <div class="search-bar">
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search for jobs, candidates..." />
+        </div>
+        <div class="header-actions">
+          <button class="create-job-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"
+              />
+            </svg>
+            <span>Create new job</span>
+          </button>
+          <svg
+            class="notification-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+          >
+            <path
+              d="M320 64C302.3 64 288 78.3 288 96L288 99.2C215 114 160 178.6 160 256L160 277.7C160 325.8 143.6 372.5 113.6 410.1L103.8 422.3C98.7 428.6 96 436.4 96 444.5C96 464.1 111.9 480 131.5 480L508.4 480C528 480 543.9 464.1 543.9 444.5C543.9 436.4 541.2 428.6 536.1 422.3L526.3 410.1C496.4 372.5 480 325.8 480 277.7L480 256C480 178.6 425 114 352 99.2L352 96C352 78.3 337.7 64 320 64zM258 528C265.1 555.6 290.2 576 320 576C349.8 576 374.9 555.6 382 528L258 528z"
+            />
+          </svg>
+          <div class="user-profile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z"
+              />
+            </svg>
+            <span>Julian H.</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z"
+              />
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <div class="main-content">
+        <aside class="sidebar">
+          <nav class="nav-menu">
+            <div class="nav-item active">
+              <div class="circle-container">
+                <svg
+                  version="1.0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 1800 1800"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <g
+                    transform="translate(0,1800) scale(1,-1)"
+                    fill="#ffffff"
+                    stroke="none"
+                  >
+                    <path
+                      d="M792 1267 c-39 -40 -72 -79 -72 -87 0 -24 652 -670 675 -670 23 0 165 137 165 160 0 23 -651 670 -675 670 -12 0 -50 -30 -93 -73z"
+                    />
+                    <path
+                      d="M562 1037 c-41 -42 -72 -81 -72 -93 0 -22 417 -444 439 -444 22 0 161 141 161 164 0 25 -416 446 -440 446 -9 0 -48 -33 -88 -73z"
+                    />
+                    <path
+                      d="M321 796 c-56 -56 -72 -78 -67 -93 9 -28 190 -203 211 -203 20 0 152 125 161 153 5 15 -15 41 -92 118 -61 61 -107 99 -119 99 -12 0 -50 -30 -94 -74z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <span>Fintory</span>
+            </div>
+            <div class="nav-item">
+              <i class="bx bx-grid-alt"></i>
+              <span>Dashboard</span>
+            </div>
+            <div class="nav-item">
+              <i class="bx bx-briefcase"></i>
+              <span>Jobs</span>
+            </div>
+            <div class="nav-item">
+              <i class="bx bx-user"></i>
+              <span>Candidates</span>
+            </div>
+            <div class="nav-item active">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path
+                  d="M416 208C416 305.2 330 384 224 384C197.3 384 171.9 379 148.8 370L67.2 413.2C57.9 418.1 46.5 416.4 39 409C31.5 401.6 29.8 390.1 34.8 380.8L70.4 313.6C46.3 284.2 32 247.6 32 208C32 110.8 118 32 224 32C330 32 416 110.8 416 208zM416 576C321.9 576 243.6 513.9 227.2 432C347.2 430.5 451.5 345.1 463 229.3C546.3 248.5 608 317.6 608 400C608 439.6 593.7 476.2 569.6 505.6L605.2 572.8C610.1 582.1 608.4 593.5 601 601C593.6 608.5 582.1 610.2 572.8 605.2L491.2 562C468.1 571 442.7 576 416 576z"
+                />
+              </svg>
+              <span>Messages</span>
+            </div>
+            <div class="nav-item">
+              <i class="bx bx-building"></i>
+              <span>Company</span>
+            </div>
+            <div class="nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path
+                  d="M415.9 274.5C428.1 271.2 440.9 277 446.4 288.3L465 325.9C475.3 327.3 485.4 330.1 494.9 334L529.9 310.7C540.4 303.7 554.3 305.1 563.2 314L582.4 333.2C591.3 342.1 592.7 356.1 585.7 366.5L562.4 401.4C564.3 406.1 566 411 567.4 416.1C568.8 421.2 569.7 426.2 570.4 431.3L608.1 449.9C619.4 455.5 625.2 468.3 621.9 480.4L614.9 506.6C611.6 518.7 600.3 526.9 587.7 526.1L545.7 523.4C539.4 531.5 532.1 539 523.8 545.4L526.5 587.3C527.3 599.9 519.1 611.3 507 614.5L480.8 621.5C468.6 624.8 455.9 619 450.3 607.7L431.7 570.1C421.4 568.7 411.3 565.9 401.8 562L366.8 585.3C356.3 592.3 342.4 590.9 333.5 582L314.3 562.8C305.4 553.9 304 540 311 529.5L334.3 494.5C332.4 489.8 330.7 484.9 329.3 479.8C327.9 474.7 327 469.6 326.3 464.6L288.6 446C277.3 440.4 271.6 427.6 274.8 415.5L281.8 389.3C285.1 377.2 296.4 369 309 369.8L350.9 372.5C357.2 364.4 364.5 356.9 372.8 350.5L370.1 308.7C369.3 296.1 377.5 284.7 389.6 281.5L415.8 274.5zM448.4 404C424.1 404 404.4 423.7 404.5 448.1C404.5 472.4 424.2 492 448.5 492C472.8 492 492.5 472.3 492.5 448C492.4 423.6 472.7 404 448.4 404zM224.9 18.5L251.1 25.5C263.2 28.8 271.4 40.2 270.6 52.7L267.9 94.5C276.2 100.9 283.5 108.3 289.8 116.5L331.8 113.8C344.3 113 355.7 121.2 359 133.3L366 159.5C369.2 171.6 363.5 184.4 352.2 190L314.5 208.6C313.8 213.7 312.8 218.8 311.5 223.8C310.2 228.8 308.4 233.8 306.5 238.5L329.8 273.5C336.8 284 335.4 297.9 326.5 306.8L307.3 326C298.4 334.9 284.5 336.3 274 329.3L239 306C229.5 309.9 219.4 312.7 209.1 314.1L190.5 351.7C184.9 363 172.1 368.7 160 365.5L133.8 358.5C121.6 355.2 113.5 343.8 114.3 331.3L117 289.4C108.7 283 101.4 275.6 95.1 267.4L53.1 270.1C40.6 270.9 29.2 262.7 25.9 250.6L18.9 224.4C15.7 212.3 21.4 199.5 32.7 193.9L70.4 175.3C71.1 170.2 72.1 165.2 73.4 160.1C74.8 155 76.4 150.1 78.4 145.4L55.1 110.5C48.1 100 49.5 86.1 58.4 77.2L77.6 58C86.5 49.1 100.4 47.7 110.9 54.7L145.9 78C155.4 74.1 165.5 71.3 175.8 69.9L194.4 32.3C200 21 212.7 15.3 224.9 18.5zM192.4 148C168.1 148 148.4 167.7 148.4 192C148.4 216.3 168.1 236 192.4 236C216.7 236 236.4 216.3 236.4 192C236.4 167.7 216.7 148 192.4 148z"
+                />
+              </svg>
+              <span>Settings</span>
+            </div>
+          </nav>
+        </aside>
+
+        <div class="messages-panel">
+          <div class="messages-header">
+            <h3>Messages <span class="count">25</span></h3>
+            <div class="messages-search">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path
+                  d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"
+                />
+              </svg>
+              <input type="text" placeholder="Search" />
+            </div>
+            <div class="filter-dropdown">
+              <span>All Messages</span>
+              <i class="bx bx-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="messages-list">
+            <div class="message-item active">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Julian H.">
+                  <img
+                    src="../assets/images/Untitled.jpeg"
+                    alt="Lena Nettke"
+                    class="avatar"
+                  />
+                </div>
+                <div class="role">
+                  <p class="name">Julian H.</p>
+                  <p>applied for <strong>UI / UX Designer</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">2h ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Julian Herbst: Hi, I have a quick question regarding my
+                  application on the open position...
+                </p>
+              </div>
+            </div>
+
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Ramona J.">
+                  RJ
+                </div>
+                <div class="role">
+                  <p class="name">Ramona J.</p>
+                  <p>applied for <strong>UI / UX Designer</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">12h ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Lena Nettke: Hi Ramona, we just reviewed your application and
+                  we're happy to...
+                </p>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Dominik W.">
+                  DW
+                </div>
+                <div class="role">
+                  <p class="name">Dominik W.</p>
+                  <p>applied for <strong>Teamlead Design</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">2 days ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Lena Nettke: Hi Dominik, we just reviewed your application and
+                  we're happy to...
+                </p>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Kevin M.">
+                  KM
+                </div>
+                <div class="role">
+                  <p class="name">Kevin M.</p>
+                  <p>
+                    applied for <strong>A very very long position title</strong>
+                  </p>
+                </div>
+                <div class="message-header">
+                  <p class="time">2 days ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Kevin Meyerle: Good morning, I just wanted to share my design
+                  challenge results...
+                </p>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Ramona J.">
+                  RJ
+                </div>
+                <div class="role">
+                  <p class="name">Ramona J.</p>
+                  <p>applied for <strong>UI / UX Designer</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">2 days ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Lena Nettke: Hi Ramona, we just reviewed your application and
+                  we're happy to...
+                </p>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Ramona J.">
+                  <img
+                    src="../assets/images/lina.jpeg"
+                    alt="Lena Nettke"
+                    class="avatar"
+                  />
+                </div>
+                <div class="role">
+                  <p class="name">Ramona J.</p>
+                  <p>applied for <strong>UI / UX Designer</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">3 days ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Lena Nettke: Hi Ramona, we just reviewed your application and
+                  we're happy to...
+                </p>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Ramona J.">
+                  RJ
+                </div>
+                <div class="role">
+                  <p class="name">Ramona J.</p>
+                  <p>applied for <strong>UI / UX Designer</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">12h ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Lena Nettke: Hi Ramona, we just reviewed your application and
+                  we're happy to...
+                </p>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-content">
+                <div class="unread-indicator"></div>
+                <div class="avatar initials-avatar" data-name="Ramona J.">
+                  RJ
+                </div>
+                <div class="role">
+                  <p class="name">Ramona J.</p>
+                  <p>applied for <strong>UI / UX Designer</strong></p>
+                </div>
+                <div class="message-header">
+                  <p class="time">2 days ago</p>
+                </div>
+              </div>
+              <div class="preview">
+                <p>
+                  Lena Nettke: Hi Ramona, we just reviewed your application and
+                  we're happy to...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-area">
+          <div class="chat-header">
+            <div class="chat-user-info">
+              <div class="role">
+                <h4>Julian Herbst</h4>
+                <span>applied for <strong>UI / UX Designer</strong></span>
+              </div>
+            </div>
+            <div class="chat-actions">
+              <button class="action-btn">View Profile</button>
+              <div class="dropdown">
+                <span>Applied</span>
+                <i class="bx bx-chevron-down"></i>
+              </div>
+              <div class="action-like">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M144 224C161.7 224 176 238.3 176 256L176 512C176 529.7 161.7 544 144 544L96 544C78.3 544 64 529.7 64 512L64 256C64 238.3 78.3 224 96 224L144 224zM334.6 80C361.9 80 384 102.1 384 129.4L384 133.6C384 140.4 382.7 147.2 380.2 153.5L352 224L512 224C538.5 224 560 245.5 560 272C560 291.7 548.1 308.6 531.1 316C548.1 323.4 560 340.3 560 360C560 383.4 543.2 402.9 521 407.1C525.4 414.4 528 422.9 528 432C528 454.2 513 472.8 492.6 478.3C494.8 483.8 496 489.8 496 496C496 522.5 474.5 544 448 544L360.1 544C323.8 544 288.5 531.6 260.2 508.9L248 499.2C232.8 487.1 224 468.7 224 449.2L224 262.6C224 247.7 227.5 233 234.1 219.7L290.3 107.3C298.7 90.6 315.8 80 334.6 80z"
+                  />
+                </svg>
+              </div>
+              <div class="action-cancel cancel">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"
+                  />
+                </svg>
+              </div>
+              <i class="bx bx-dots-vertical-rounded"></i>
+            </div>
+          </div>
+
+          <div class="chat-messages">
+            <div class="date-separator">09.03.20</div>
+
+            <div class="message sent">
+              <img
+                src="../assets/images/Untitled.jpeg"
+                alt="Julian Herbst"
+                class="avatar"
+              />
+              <div class="message-bubble">
+                <div class="sender-name">Julian Herbst</div>
+                <div class="message-text">
+                  Hi Lena, I have a quick question regarding my application on
+                  the open position „UI / UX Designer".
+                  <br /><br />
+                  How long does it usually take for you to review a application?
+                  I have some options right now but I would like to consider
+                  your company as well but I have no response since I applied.
+                  Please just give me a quick message.
+                  <br /><br />
+                  Thanks and best regards,<br />
+                  Julian Herbst
+                </div>
+                <div class="message-time">Message sent 1 week ago</div>
+              </div>
+            </div>
+
+            <div class="date-separator">Today</div>
+
+            <div class="message received">
+              <div class="message-bubble">
+                <div class="message-text">
+                  Hi Julian,<br />
+                  sorry for the delayed response but we're currently really busy
+                  screening a lot of new candidates. So to answer your question:
+                  Usually we need around 1 week to review the applications and I
+                  just took a look into yours.
+                  <br /><br />
+                  We like what we see and would like to send you our Design
+                  Challenge – that's the way we see how qualified you are. The
+                  timeframe is a normal working day (~8 hours).
+                  <br /><br />
+                  Please finish it within the next 7 days. If you have any
+                  questions feel free to message me here.
+                </div>
+                <div class="message-time">Message sent just now</div>
+              </div>
+              <img
+                src="../assets/images/lina.jpeg"
+                alt="Lena Nettke"
+                class="avatar"
+              />
+            </div>
+          </div>
+
+          <div class="chat-input">
+            <div class="input-container">
+              <input type="text" placeholder="Write your message" />
+              <div class="input-actions">
+                <i class="bx bx-paperclip"></i>
+                <i class="bx bx-bold"></i>
+                <i class="bx bx-italic"></i>
+                <i class="bx bx-list-ul"></i>
+                <i class="bx bx-list-ol"></i>
+                <i class="bx bx-link"></i>
+              </div>
+            </div>
+            <div class="last">
+              <div>
+                <i class="bx bx-smile"></i>
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </div>
+              <button class="send-btn">
+                Send
+                <i class="bx bx-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
