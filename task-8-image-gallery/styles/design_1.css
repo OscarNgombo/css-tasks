@@ -21,7 +21,6 @@ body {
     "img_4 img_2 img_2 img_2 img_5"
     "img_6 img_7 img_8 img_9 img_10";
   grid-template-columns:repeat(5, 1fr);
-  grid-template-rows: 1fr 2fr 1fr;
   row-gap: 2rem;
   column-gap: 1rem;
   padding: 1rem;

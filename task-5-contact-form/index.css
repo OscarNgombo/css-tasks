@@ -1,10 +1,14 @@
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../assets/fonts/LexendDeca.ttf") format("truetype");
+}
 :root {
   --background-color: #092566;
-  --primary-color: #3b5998; /* Adjusted to match image */
-  --secondary-color: #f3f3f2; /* Light background for form */
+  --primary-color: #3b5998;
+  --secondary-color: #f3f3f2;
   --default-text-color: #fff;
   --alternate-text-color: #434343;
-  --button-color: #007bff; /* Blue button color */
+  --button-color: #007bff;
 }
 * {
   margin: 0;
@@ -13,33 +17,25 @@
 }
 
 body {
+  font-family: "Lexend Deca", sans-serif;
   font-size: 14px;
   font-family: sans-serif;
-  color: var(--default-text-color);
   background-color: var(--background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 main {
   border-radius: 5px;
-  width: 97%;
-
-  background-color: var(--primary-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 .contact-container {
   display: flex;
   flex-direction: row;
-  width: 100%; 
+  width: 100%;
   border-radius: 5px;
   overflow: hidden;
 }
 .contact-info {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 3rem;
+  padding: 2rem;
   flex: 1;
   background-color: var(--primary-color);
   color: var(--default-text-color);
@@ -47,33 +43,34 @@ main {
 }
 .contact-info h1 {
   font-size: 2em;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   font-weight: normal;
+  font-weight: 700;
 }
 .contact-info p {
   line-height: 1.5;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 .contact-details {
   margin-top: auto;
 }
 .contact-details p {
-  margin-bottom: 0.5rem; 
+  margin-bottom: 0.5rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 3rem;
+  padding: 4rem;
   background-color: var(--secondary-color);
-  flex: 2;
+  flex: 3;
   color: var(--alternate-text-color);
   gap: 1.5rem;
 }
 
 .contact-form form {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 1.5rem 2rem;
 }
 
@@ -84,12 +81,12 @@ main {
 }
 
 .form-group.full-width {
-  flex: 1 1 100%; 
+  flex: 1 1 100%;
 }
 
 .contact-form label {
   margin-bottom: 0.5rem;
-  font-weight: bold; 
+  font-weight: bold;
   font-size: 0.9em;
   color: var(--alternate-text-color);
 }
@@ -101,7 +98,7 @@ main {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1em;
-  width: 100%; 
+  width: 100%;
 }
 
 .contact-form textarea {
@@ -118,35 +115,13 @@ main {
   font-size: 1.1em;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  width: 100%; 
+  width: 100%;
 }
-
+.play-area {
+  margin: 2rem;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .contact-form button:hover {
-  background-color: #0056b3; 
-}
-
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    width: 90%;
-  }
-
-  .contact-info,
-  .contact-form {
-    flex: none; 
-    width: 100%; 
-    border-radius: 0; 
-  }
-
-  .contact-info {
-    border-radius: 5px 5px 0 0; 
-  }
-
-  .contact-form {
-    border-radius: 0 0 5px 5px;
-  }
-
-  .form-group {
-    flex: 1 1 100%;
-  }
+  background-color: #0056b3;
 }
